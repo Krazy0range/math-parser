@@ -1,0 +1,4 @@
+# ignore object code files
+*.o
+# ignore vscode stuff
+math-parser.code-workspace
