@@ -19,8 +19,14 @@ int main(int argc, char *argv[])
     fcontents = readfile(argv);
 
     // Lexer
-    Lexer lexer(fcontents);
+    LexerSettings lexerSettings;
+    lexerSettings.debug_tokens = true;
+    Lexer lexer(fcontents, lexerSettings);
     lexer.lex();
+
+    // Parser
+    ParserSettings parserSettings;
+    parserSettings.debug_
 }
 
 void checkargs(int argc, char *argv[])

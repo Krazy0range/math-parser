@@ -11,19 +11,26 @@ enum class TokenType
     operat,
     pareno,
     parenc,
+    equals,
     none
 };
 
 class Token
 {
     private:
-        char word;
+        int data;
         TokenType type;
     
     public:
-        Token(char word, TokenType type);
-        char getWord();
+        Token(int data, TokenType type);
+        int getData();
         TokenType getType();
+        std::string getTypeStr();
+};
+
+struct LexerSettings
+{
+    bool debug_tokens;
 };
 
 class Lexer
@@ -31,9 +38,11 @@ class Lexer
     private:
         std::string fcontents;
         std::vector<Token> tokens;
+        LexerSettings settings;
+        void debugTokens();
 
     public:
-        Lexer(std::string fcontents);
+        Lexer(std::string fcontents, LexerSettings settings);
         void lex();
 };
 
