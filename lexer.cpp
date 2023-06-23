@@ -82,6 +82,11 @@ Lexer::Lexer(std::string fcontents, LexerSettings settings)
     this->settings = settings;
 }
 
+std::vector<Token> Lexer::getTokens()
+{
+    return tokens;
+}
+
 // Prototypes
 std::vector<char> split(std::string text);
 void make_token(std::vector<Token> & tokens, int symbol, TokenType type);

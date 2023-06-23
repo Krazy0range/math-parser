@@ -5,6 +5,7 @@
 #include <cstring>
 
 #include "lexer.hpp"
+#include "parser.hpp"
 
 void checkargs(int argc, char *argv[]);
 std::string readfile(char *argv[]);
@@ -26,7 +27,9 @@ int main(int argc, char *argv[])
 
     // Parser
     ParserSettings parserSettings;
-    parserSettings.debug_
+    parserSettings.debug_ast = true;
+	Parser parser(lexer.getTokens(), parserSettings);
+	parser.parse();
 }
 
 void checkargs(int argc, char *argv[])

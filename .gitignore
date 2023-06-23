@@ -2,6 +2,7 @@
 *.o
 # ignore build file
 a.exe
+a.out
 # ignore vscode stuff
 math-parser.code-workspace
 # ignore replit stuff

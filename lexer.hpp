@@ -44,6 +44,7 @@ class Lexer
     public:
         Lexer(std::string fcontents, LexerSettings settings);
         void lex();
+        std::vector<Token> getTokens();
 };
 
 #endif
